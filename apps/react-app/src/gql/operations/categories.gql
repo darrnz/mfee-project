@@ -1,0 +1,10 @@
+query GetCategories {
+  getCategories {
+    categoryId
+    categoryName
+    categoryDescription
+    categoryStatus
+    updatedAt
+    createdAt
+  }
+}

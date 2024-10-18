@@ -1,0 +1,94 @@
+query GetPosts {
+  getPosts {
+    postId
+    postTitle
+    postDescription
+    categoryFkId
+    commentFkId
+    userFkId
+    updatedAt
+    createdAt
+    comments {
+      commentId
+      content
+      status
+      createdAt
+      updatedAt
+      author
+      user {
+        userId
+        userName
+        firstName
+        lastName
+        email
+        psw
+      }
+    }
+    category {
+      categoryId
+      categoryName
+      categoryDescription
+      categoryStatus
+      updatedAt
+      createdAt
+    }
+    user {
+      email
+      userId
+      userName
+      firstName
+      lastName
+    }
+  }
+}
+
+mutation AddPost($newPostData: NewPostInput!) {
+  addPost(newPostData: $newPostData) {
+    postId
+    postTitle
+    postDescription
+    categoryFkId
+    commentFkId
+    userFkId
+    updatedAt
+    createdAt
+    comments {
+      commentId
+      content
+      status
+      createdAt
+      updatedAt
+      author
+      user {
+        userId
+        userName
+        firstName
+        lastName
+        email
+        psw
+        userStatus
+        createdAt
+        updatedAt
+      }
+    }
+    category {
+      categoryId
+      categoryName
+      categoryDescription
+      categoryStatus
+      updatedAt
+      createdAt
+    }
+    user {
+      userId
+      userName
+      firstName
+      lastName
+      email
+      psw
+      userStatus
+      createdAt
+      updatedAt
+    }
+  }
+}
